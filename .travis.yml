@@ -1,7 +1,13 @@
 language: cpp
-os: linux
-dist: trusty
-sudo: required
+
+matrix:
+  include:
+  - os: linux
+    dist: trusty
+    sudo: required
+  - os: windows
+  allow_failures:
+  - os: windows
 
 addons:
   apt:
