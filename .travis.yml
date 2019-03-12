@@ -17,6 +17,6 @@ addons:
       - g++-8
       - libgtest-dev
 install:
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90; fi
 script:
   - make travis
