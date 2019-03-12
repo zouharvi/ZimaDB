@@ -18,5 +18,6 @@ addons:
       - libgtest-dev
 install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90; fi
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then choco install make; fi
 script:
   - make travis
